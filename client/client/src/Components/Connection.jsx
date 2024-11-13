@@ -7,7 +7,7 @@ const connection = () => {
     const [item, setitem] = useState('')
     // const [datatodo, setdatatodo] = useState([])
     // const endpoint = 'http://localhost:5000/home'
-    const url = 'https://connecting-front-and-backend-9i7x.vercel.app//submit'
+    const url = 'https://connecting-front-and-backend-9i7x.vercel.app/submit'
     // const endpoint = 'http://localhost:5000/getusername'
     // const fetchInfo = () => {
     //     axios.get(endpoint)
