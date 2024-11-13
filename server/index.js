@@ -51,17 +51,22 @@ app.post('/submit', (req, res) => {
     console.log(req.body);
     const form = new userModel(req.body);
     form.save();
+    res.status(200).json({message:'success'});
 })
-app.get('/getusername' , (req, res) => {
-    userModel.find()
-    .then((result) => {
-        console.log(result);
-        res.send(result);
-    })
-    .catch((err) => {
-        console.log(err);
-    })
+
+app.get('/', (req, res) => {
+    res.send('hello world');
 })
+// app.get('/getusername' , (req, res) => {
+//     userModel.find()
+//     .then((result) => {
+//         console.log(result);
+//         res.send(result);
+//     })
+//     .catch((err) => {
+//         console.log(err);
+//     })
+// })
 
 app.listen(port, () => {
     console.log(`lift off.. server listening at http://localhost:${port}`);

@@ -5,10 +5,10 @@ import { useState } from 'react'
 const connection = () => {
     // const [info, setinfo] = useState([])
     const [item, setitem] = useState('')
-    const [datatodo, setdatatodo] = useState([])
+    // const [datatodo, setdatatodo] = useState([])
     // const endpoint = 'http://localhost:5000/home'
-    const url = 'http://localhost:5000/submit'
-    const endpoint = 'http://localhost:5000/getusername'
+    const url = 'https://connecting-front-and-backend-9i7x.vercel.app//submit'
+    // const endpoint = 'http://localhost:5000/getusername'
     // const fetchInfo = () => {
     //     axios.get(endpoint)
     //     .then((result) => {
@@ -21,19 +21,19 @@ const connection = () => {
     //     })
     // }
 
-    const getData = () => {
-        axios.get(endpoint)
-        .then((result) => {
-            let datatodo = result.data
-            setdatatodo(datatodo)
-            console.log(result.data)        
-            console.log(datatodo)        
-        })
-        .catch((error) => {
-            console.log(error)
-        })
+//     const getData = () => {
+//         axios.get(endpoint)
+//         .then((result) => {
+//             let datatodo = result.data
+//             setdatatodo(datatodo)
+//             console.log(result.data)        
+//             console.log(datatodo)        
+//         })
+//         .catch((error) => {
+//             console.log(error)
+//         })
         
-}
+// }
 
     const submitInfo = () => {
         if(item === '') {
@@ -44,7 +44,7 @@ const connection = () => {
             axios.post(url, obj)
             // .then(()=>console.log('sent'))
             // .catch(err=>console.log(err))
-            getData()
+            // getData()
             
         }
     }
@@ -56,9 +56,9 @@ const connection = () => {
         
 
     
-    useEffect(() => {
-        getData()
-    }, [])
+    // useEffect(() => {
+    //     getData()
+    // }, [])
     
         
   return (
@@ -67,7 +67,7 @@ const connection = () => {
         <input type="text" name='item' value={item} onChange={(e)=>{setitem(e.target.value)}}/>
         <button onClick={submitInfo}>Submit</button>
 
-        <table>
+        {/* <table>
             <tbody>
                 {datatodo.map((item,i)=>(
                     <tr key={i}>
@@ -77,7 +77,7 @@ const connection = () => {
 
                
             </tbody>
-        </table>
+        </table> */}
        
     </>
   )
